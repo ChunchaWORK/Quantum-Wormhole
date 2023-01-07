@@ -15,7 +15,7 @@
 
 感谢 [Meowfied Chinese](https://t.me/setlanguage/meowcn) 喵，使用喵体中文谢谢喵。
 
-在 Telegram 里 [听个笑话](tg://need_update_for_some_feature) 喵。
+**This joke can’t be displayed because it was used to spread pornographic content.**
 
 感谢 Crazy Thursday V Me 50 喵。
 
