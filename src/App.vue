@@ -78,8 +78,7 @@ const form_check = async (e: Event) => {
     e.preventDefault();
     const { valid } = await form.value.validate();
     if (valid) {
-        const canvas_obj = new WormholeCanvas();
-        canvas_obj.seed = getHash(form_name.value);
+        const canvas_obj = new WormholeCanvas(getHash(form_name.value));
         canvas_obj.wormhole();
     }
 }
