@@ -40,7 +40,7 @@
                 <VToolbar color="error">
                     <VCardTitle>
                         <VIcon>mdi-close</VIcon>
-                        未获得 Apple 认证的设备
+                        不是获得 Apple 认证的设备
                     </VCardTitle>
                 </VToolbar>
                 <VCardText>
@@ -93,9 +93,7 @@ const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
 onMounted(() => {
-    if (!navigator.userAgent.match(/\(i[^;]+;( U);? CPU.+Mac OS X/)) {
-        dialog.value = true;
-    }
+    dialog.value = !/iPad|iPhone|iPod/.test(navigator.userAgent);
 });
 
 </script>
