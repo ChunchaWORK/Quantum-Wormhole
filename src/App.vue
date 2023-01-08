@@ -18,10 +18,10 @@
         <VMain class="ma-6 d-flex" id="main">
             <VCard elevation="16" class="h-100 w-100 pa-4">
                 <div class="d-flex justify-center pa-2">
-                    <canvas height="300" width="300" style="background-color: rgba(,,,);"></canvas>
+                    <canvas id="wormhole" height="300" width="300"></canvas>
                 </div>
-                <VForm v-model="form_vaild" ref="form" class="w-75 mx-auto py-10 align-center"
-                    @submit="form_check($event)">
+                <VDivider class="mx-1 py-3"></VDivider>
+                <VForm v-model="form_vaild" ref="form" class="w-75 mx-auto align-center" @submit="form_check($event)">
                     <VTextField v-model="form_name" :rules="form_name_rules" prepend-inner-icon="mdi-account"
                         counter="20" label="名称" reqiuired>
                     </VTextField>
@@ -78,7 +78,7 @@ const form_check = async (e: Event) => {
     e.preventDefault();
     const { valid } = await form.value.validate();
     if (valid) {
-        const canvas_obj = new WormholeCanvas(getHash(form_name.value));
+        const canvas_obj = new WormholeCanvas(getHash(form_name.value), "#wormhole");
         canvas_obj.wormhole();
     }
 }
@@ -105,5 +105,10 @@ onMounted(() => {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+#wormhole {
+    background: url(../public/image/mask-icon.svg) no-repeat;
+    background-size: 100% 100%;
 }
 </style>
